@@ -1,0 +1,75 @@
+body {
+  font-family: sans-serif;
+  background-color: azure;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 350px auto 350px;
+  grid-template-rows: 100vh;
+  grid-template-areas: 
+    "left-sidebar   center-canvas   right-sidebar";
+}
+
+.left-sidebar {
+  grid-area: left-sidebar;
+  /* background-color: azure; */
+  padding: 10px;
+  padding-left: 40px;
+}
+
+.left-sidebar .profile-info {
+  margin-top: 10vh;
+}
+
+.left-sidebar .profile-info .profile-pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.left-sidebar .character-info {
+  margin-top: 10px;
+}
+
+.left-sidebar .character-info > div {
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.center-canvas {
+  grid-area: center-canvas;
+  /* background-color: burlywood; */
+  min-width: 1000px;
+}
+
+.right-sidebar {
+  grid-area: right-sidebar;
+  /* background-color: bisque; */
+  padding: 10px;
+  padding-right: 40px;
+}
+
+.right-sidebar .chat {
+  width: 260px;
+  height: 60vh;
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  margin-top: 10vh;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.right-sidebar .chat div {
+  margin-bottom: 10px;
+}
+
+.right-sidebar  .chat-input {
+  width: 260px;
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
