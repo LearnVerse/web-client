@@ -8,27 +8,36 @@
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
   <link href="styles.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('images/volcanohires.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="left-sidebar">
-      <div class="profile-info">
-        <div>
-          <h1>Dinosaur McDinosaurFace</h1>
-          <img src="prof_pic.jpg" alt="dinosaur_image" class="profile-pic">
-        </div>
-        <div class="character-info">
-          <div><b>Period:</b> Cretacean</div>
-          <div><b>Height:</b> 9.5-9.8 ft</div>
-          <div><b>Length:</b> 25.9-29.5 ft</div>
-          <div><b>Mass:</b> 6.1 - 12 tons</div>
-          <div><b>Adaptations:</b> Horns for protection</div>
-        </div>  
-      </div>
-      <div class="gameplay-info">
-
-      </div>
+    <div class="header">
+      <img src="images/learnverse_logo.png" alt="learnverse_logo" style="width:150px;height:150px;">
+    </div>
+    <div class="sidenav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer">
+      <h2>Game Description</h2>
+      <p>Play as a dinosaur in this evolution simulator! 
+        You will be shown an environment and given a choice: meat-eater or plant-eater.
+        Choose the dino that is best suited for the environment and consume enough food before your energy runs out!</p>
+      <h2>Instructions</h2>
+      <p>Use 'W', 'A', 'S', 'D' keys to move forward and backwards and turn side-to-side. 
+        When near a food source, press 'E' to eat.
+      </p>
     </div>
     <div class="center-canvas" id="for-canvas">
       <div id="unity-container" class="unity-desktop">
@@ -48,14 +57,6 @@
           <div id="unity-build-title">WebGL Multiplayer test</div>
         </div>
       </div>  
-    </div>
-    <div class="right-sidebar">
-      <div class="chat">
-        <div><i>Scroll up to see earlier messages</i></div>
-        <div><b>Katrina:</b> Hey guys! Look at my cool dinosaur!</div>
-        <div><b>Hank:</b> Mine's way cooler</div>
-      </div>
-      <textarea class="chat-input" placeholder="Type in to chat!"></textarea>
     </div>
   </div>
   <script>
