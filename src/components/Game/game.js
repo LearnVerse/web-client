@@ -1,17 +1,15 @@
-import './styles.css';
-import Unity, { UnityContext } from "react-unity-webgl";
+import Sidebar from "../Sidebar/sidebar";
+import UnityCanvas from "../UnityCanvas/unitycanvas";
+import Instructions from "../Instructions/instructions";
 
-const unityContext = new UnityContext({
-  loaderUrl: "build/Build.loader.js",
-  dataUrl: "build/Build.data",
-  frameworkUrl: "build/Build.framework.js",
-  codeUrl: "build/Build.wasm",
-});
+import './styles.css';
 
 function Game() {
   return (
-    <div className='unity-wrapper'>
-      <Unity className='unity-interface' unityContext={unityContext} />
+    <div className="container">
+      <div className="sidebar"><Sidebar /></div>
+      <div className="canvas"><UnityCanvas /></div>
+      <div className="instructions"><Instructions /></div>
     </div>
   );
 }

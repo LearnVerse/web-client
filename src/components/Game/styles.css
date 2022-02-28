@@ -1,11 +1,27 @@
-.unity-wrapper {
-  width: 100%;
-  max-width: 1000px;
-  text-align: center;
-  margin: 0 auto;
+.container {
+  display: grid;
+  grid-template-columns: 260px auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "sidebar  canvas"
+    "sidebar  instructions"
 }
 
-.unity-interface {
-  width: 100%;
-  height: 100%;
+.sidebar {
+  grid-area: sidebar;
+  padding: 30px;
+  z-index: 1;
+}
+
+.canvas {
+  grid-area: canvas;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  z-index: 1;
+}
+
+.instructions {
+  grid-area: instructions;
+  z-index: 1;
 }
