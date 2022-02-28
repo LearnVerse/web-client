@@ -1,0 +1,11 @@
+.unity-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.unity-interface {
+  width: 100%;
+  height: 100%;
+}
