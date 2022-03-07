@@ -1,8 +1,8 @@
 const ROOT_URL = 'http://localhost:3000/';
 
 const ROUTES = {
-  HOME: '/',
-  GAME: '/game',
+  // HOME: '/',
+  GAME: '/',
 };
 
 export {

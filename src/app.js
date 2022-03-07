@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ROUTES } from './constants';
 
 import {
-  Home,
+  // Home,
   Game,
 } from './components';
 
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={ROUTES.HOME} element={<Home />} />
+        {/* <Route path={ROUTES.HOME} element={<Home />} /> */}
         <Route path={ROUTES.GAME} element={<Game />} />
         <Route path='*' element={FallBack()} />
       </Routes>
