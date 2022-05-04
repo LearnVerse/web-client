@@ -1,15 +1,12 @@
-import Sidebar from "../Sidebar/sidebar";
 import UnityCanvas from "../UnityCanvas/unitycanvas";
-import Instructions from "../Instructions/instructions";
 
 import './styles.css';
 
 function Game() {
   return (
     <div className="container">
-      <div className="sidebar"><Sidebar /></div>
+      Yellow! :)
       <div className="canvas"><UnityCanvas /></div>
-      <div className="instructions"><Instructions /></div>
     </div>
   );
 }
