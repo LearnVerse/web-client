@@ -1,27 +1,8 @@
-.container {
-  display: grid;
-  grid-template-columns: 260px auto;
-  grid-template-rows: 1fr auto;
-  grid-template-areas:
-    "sidebar  canvas"
-    "sidebar  instructions"
+.end-button {
+  margin-left: 85vw;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  padding: 30px;
-  z-index: 1;
-}
-
-.canvas {
-  grid-area: canvas;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 30px;
-  z-index: 1;
-}
-
-.instructions {
-  grid-area: instructions;
-  z-index: 1;
+.header{
+  margin-top: 5px;
+  margin-left: 100px;
 }

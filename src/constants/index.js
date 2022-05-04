@@ -4,6 +4,7 @@ const ROUTES = {
   HOME: '/home',
   GAME: '/game',
   ROOM: '/room',
+  SELECTION: '/selection',
 };
 
 export {

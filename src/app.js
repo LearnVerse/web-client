@@ -4,6 +4,7 @@ import { ROUTES } from './constants';
 import Home from './components/Home/home';
 import Game from './components/Game/game';
 import Room from './components/Room/room';
+import Selection from './components/Selection/selection';
 
 const FallBack = () => {
   return <div>URL not found</div>;
@@ -14,6 +15,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.SELECTION} element={<Selection />} />
         <Route path={ROUTES.GAME} element={<Game />} />
         <Route path={ROUTES.ROOM} element={<Room />} />
         <Route path='*' element={FallBack()} />
