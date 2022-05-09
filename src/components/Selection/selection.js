@@ -1,5 +1,4 @@
-import {Button} from '@material-ui/core'; //importing material ui component
-import { Typography } from '@mui/material';
+import {Button, TextField, Typography} from '@material-ui/core'; //importing material ui component
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -14,18 +13,18 @@ function Selection() {
   const isInstructor = true;
 
   return (
+    <div className='containerSelection'>
     <div>
       <div className="header">
-        <Typography variant="subtitle1">LearnVerse - Choose Your adventure: {moduleName}</Typography>
+        <Typography variant="h4">LearnVerse - Choose Your adventure: {moduleName}</Typography>
       </div>
-    <div>
+    <div className='game-card'>
         <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
             <CardMedia
             component="img"
             height="140"
-            image="../../assets/spaceImage.jpg"
-
+            image="spaceImage.jpg"
             alt="Space Module"
             />
             <CardContent>
@@ -39,11 +38,17 @@ function Selection() {
         </CardActionArea>
         </Card>
     </div>
+
+    <div className='input-fields'>
+      <TextField id="outlined-basic" label="Enter Instructor Name" variant="outlined" />
+      <TextField id="outlined-basic" label="Enter Number of Students" variant="outlined" />
+    </div>
       
       <div className="create-button">
             <Button variant="contained" size="large">Create Game</Button>
         </div>  
 
+    </div>
     </div>
   );
 }

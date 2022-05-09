@@ -18,7 +18,6 @@ function Sidebar() {
         <div className='sidebar-menu-element'><a href='#'>About</a></div>
         <div className='sidebar-menu-element'><a href='#'>FAQ</a></div>
         <div className='sidebar-menu-element'><a href='#'>Contact</a></div>
-        <Button> <a href={ROOT_URL}>Start Game</a></Button>
 
       </div>
       
