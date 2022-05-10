@@ -14,17 +14,17 @@ function Selection() {
 
   return (
     <div className='containerSelection'>
-    <div>
-      <div className="header">
-        <Typography variant="h4">LearnVerse - Choose Your adventure: {moduleName}</Typography>
-      </div>
-    <div className='game-card'>
-        <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
+      <div>
+        <div className="header">
+          <Typography variant="h4">LearnVerse - Choose Your adventure: {moduleName}</Typography>
+        </div>
+        <div className='game-card'>
+          <Card sx={{ maxWidth: 345 }}>
+          <CardActionArea>
             <CardMedia
             component="img"
-            height="140"
-            image="spaceImage.jpg"
+            height="250"
+            image={require("../../assets/gravityMay9.png")}
             alt="Space Module"
             />
             <CardContent>
@@ -35,20 +35,17 @@ function Selection() {
                 Space Module teaches students about gravity in space. They will learn about how masses of planets affect gravity. 
             </Typography>
             </CardContent>
-        </CardActionArea>
-        </Card>
-    </div>
-
-    <div className='input-fields'>
-      <TextField id="outlined-basic" label="Enter Instructor Name" variant="outlined" />
-      <TextField id="outlined-basic" label="Enter Number of Students" variant="outlined" />
-    </div>
-      
-      <div className="create-button">
-            <Button variant="contained" size="large">Create Game</Button>
-        </div>  
-
-    </div>
+          </CardActionArea>
+          </Card>
+        </div>
+        <div className='input-fields'>
+          <TextField id="outlined-basic" label="Enter Instructor Name" variant="outlined" />
+          <TextField id="outlined-basic" label="Enter Number of Students" variant="outlined" />
+        </div>
+        <div className="create-button">
+          <Button variant="contained" size="large">Create Game</Button>
+        </div> 
+      </div>
     </div>
   );
 }

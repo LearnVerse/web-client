@@ -1,10 +1,6 @@
 .game-card{
     padding-top: 20vh;
 }
-.input-fields{
-    /* display: flex;
-    justify-content: center; */
-}
 .containerSelection {
     display: flex;
     justify-content: center;
