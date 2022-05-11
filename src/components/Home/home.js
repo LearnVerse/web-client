@@ -4,6 +4,7 @@ import {Button, TextField} from '@material-ui/core'; //importing material ui com
 function Home() {
   return (
     <div className='container-home'>
+      <img className='learnverseBannerHome' src={require('../../assets/learnverse_logo_banner.png')}/>
       <div className='input-home'>
         <TextField className="home-name" id="outlined-basic" label="Enter Name" variant="outlined" />
         <TextField id="outlined-basic" label="Enter Game Pin" variant="outlined" />

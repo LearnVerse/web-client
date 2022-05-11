@@ -16,6 +16,9 @@ function Game() {
 
   return (
     <div>
+      <div>
+        <img className="learnverseBannerGame"src={require('../../assets/learnverse_logo_banner.png')}/>
+      </div>
       <div className="header">
       {isEvolution
         && (
