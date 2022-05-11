@@ -1,16 +1,25 @@
 .game-card{
     padding-top: 20vh;
 }
-.containerSelection {
+.container-card {
     display: flex;
-    justify-content: center;
-}
-.input-selection {
-    border-color: aquamarine;
+    flex-direction: row;
 }
 .font-coco{
     font-family: "CocoFont";
     padding-bottom: 1vh;
     padding-top: 2vh;
     font-size: xx-large;
-  }
+}
+.input-selection{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+}
+.create-button{
+    position: absolute;
+    left: 90%;
+    top: 90%;
+    transform: translate(-50%, -50%); 
+}
