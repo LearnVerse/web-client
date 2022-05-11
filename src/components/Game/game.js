@@ -6,15 +6,34 @@ import './styles.css';
 import { useState } from "react";
 
 function Game() {
-  const [moduleName, setModuleName] = useState('Gravity!');
+  const [moduleName, setModuleName] = useState('Jungle!');
   const [address, setAddress] = useState('100.100.100.100');
   const isInstructor = true;
+  const isEvolution = true;
+  const isSpace = false;
+
+
 
   return (
     <div>
       <div className="header">
-        <Typography variant="subtitle1">Module name: {moduleName}</Typography>
-        <Typography variant="subtitle1">IP Address: {address}</Typography>
+      {isEvolution
+        && (
+          <div className="header">
+            <div className="font-jungle">Your adventure: {moduleName}</div>
+            <div className="font-jungle">IP Address: {address}</div>
+          </div> 
+        )
+      }
+      {isSpace
+        && (
+          <div className="header">
+            <div className="font-space">Your adventure: {moduleName}</div>
+            <div className="font-space">IP Address: {address}</div>
+          </div> 
+           
+        )
+      }
       </div>
       <div><UnityCanvas /></div>
       {isInstructor

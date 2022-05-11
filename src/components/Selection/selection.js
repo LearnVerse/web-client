@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
-
+import GameModule from "../GameModule/gameModule";
 import './styles.css';
 import { useState } from "react";
 
@@ -16,8 +16,9 @@ function Selection() {
     <div className='containerSelection'>
       <div>
         <div className="header">
-          <Typography variant="h4">LearnVerse - Choose Your adventure: {moduleName}</Typography>
+          <div className='font-coco'>Choose Your Adventure!</div>
         </div>
+        <div className="evolution-card"><GameModule /></div>
         <div className='game-card'>
           <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
@@ -38,7 +39,7 @@ function Selection() {
           </CardActionArea>
           </Card>
         </div>
-        <div className='input-fields'>
+        <div className='input-selection'>
           <TextField id="outlined-basic" label="Enter Instructor Name" variant="outlined" />
           <TextField id="outlined-basic" label="Enter Number of Students" variant="outlined" />
         </div>

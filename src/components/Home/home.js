@@ -3,13 +3,17 @@ import {Button, TextField} from '@material-ui/core'; //importing material ui com
 
 function Home() {
   return (
-    <div className='input-fields'>
-      <TextField id="outlined-basic" label="Enter Name" variant="outlined" />
-      <TextField id="outlined-basic" label="Enter Game Pin" variant="outlined" />
-      <div className="end-button">
+    <div className='container-home'>
+      <div className='input-home'>
+        <TextField className="home-name" id="outlined-basic" label="Enter Name" variant="outlined" />
+        <TextField id="outlined-basic" label="Enter Game Pin" variant="outlined" />
+      </div>
+      <div className="button-home">
             <Button variant="contained" size="large">Join Game</Button>
-          </div> 
-      <a href="card.html">If you are an instructor, click here to create a new game</a>
+      </div> 
+      <div className='click-selectpage'>
+        <a href="selection">If you are an instructor, click here to create a new game</a>
+      </div>
     </div>
   );
 }

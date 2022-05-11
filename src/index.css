@@ -19,3 +19,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "SpaceFont";
+  src: local("SpaceFont"),
+   url("./fonts/space-font-reg.ttf") format("truetype");
+  font-weight: bold;
+  }
+
+@font-face {
+  font-family: "JungleFont";
+  src: local("JungleFont"),
+    url("./fonts/jungle-font.ttf") format("truetype");
+  font-weight: bold;
+  }
+
+@font-face {
+  font-family: "CocoFont";
+  src: local("CocoFont"),
+    url("./fonts/cocogoose.ttf") format("truetype");
+  font-weight: bold;
+  }
+
+  

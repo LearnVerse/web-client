@@ -5,3 +5,12 @@
     display: flex;
     justify-content: center;
 }
+.input-selection {
+    border-color: aquamarine;
+}
+.font-coco{
+    font-family: "CocoFont";
+    padding-bottom: 1vh;
+    padding-top: 2vh;
+    font-size: xx-large;
+  }

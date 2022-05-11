@@ -1,9 +1,18 @@
-.input-fields{
+.input-home{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 5px solid #2695ae;
-    background-color: aliceblue;
-    padding: 10px;
+}
+.button-home{
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+.click-selectpage{
+    position: absolute;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -50%);
 }
