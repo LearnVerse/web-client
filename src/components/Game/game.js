@@ -9,44 +9,26 @@ function Game() {
   const [moduleName, setModuleName] = useState('Jungle!');
   const [address, setAddress] = useState('100.100.100.100');
   const isInstructor = true;
-  const isEvolution = true;
-  const isSpace = false;
-
-
+  const fontFamily = "JungleFont";
+  const fontSize = "2rem";
 
   return (
     <div>
-      <div>
-        <img className="learnverseBannerGame"src={require('../../assets/learnverse_logo_banner.png')}/>
-      </div>
       <div className="header">
-      {isEvolution
-        && (
-          <div className="header">
-            <div className="font-jungle">Your adventure: {moduleName}</div>
-            <div className="font-jungle">IP Address: {address}</div>
-          </div> 
-        )
-      }
-      {isSpace
-        && (
-          <div className="header">
-            <div className="font-space">Your adventure: {moduleName}</div>
-            <div className="font-space">IP Address: {address}</div>
-          </div> 
-           
-        )
-      }
+        <div className="logo">
+          <img src={require('../../assets/learnverse_logo_banner.png')}/>
+        </div>
+        <div className="info">
+            <div style={{ fontFamily, fontSize }}>Your adventure: {moduleName}</div>
+            <div style={{ fontFamily, fontSize }}>IP Address: {address}</div>
+        </div>
       </div>
       <div><UnityCanvas /></div>
       {isInstructor
         && (
           <div className="end-button">
             <Button variant="contained" size="large">End Game</Button>
-          </div>  
-        )
-      }
-
+          </div>)}
     </div>
   );
 }

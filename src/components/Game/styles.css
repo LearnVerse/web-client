@@ -1,26 +1,17 @@
-.end-button {
-  margin-left: 85vw;
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.header{
-  margin-top: 5px;
-  margin-left: 100px;
-}
-.learnverseBannerGame{
-  position: absolute;
-  left: 7%;
-  top: 7%;
-  transform: translate(-50%, -50%);
-  width: auto;
+.logo > img {
   height: 70px;
 }
-.font-space{
-  font-family: "SpaceFont";
-  padding-bottom: 1vh;
-}
 
-.font-jungle{
-  font-family: "JungleFont";
-  font-size:xx-large;
-  padding-bottom: 1vh;
+.end-button {
+  margin-left: 85vw;
 }

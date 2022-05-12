@@ -12,6 +12,21 @@ function Selection() {
   const [address, setAddress] = useState('100.100.100.100');
   const isInstructor = true;
 
+  const modules = [
+    {
+      'img': '../../assets/evolutionMay10.png',
+      'alt': 'Evolution Module',
+      'module_name': 'Evolution',
+      'module_description': 'Evolution Module teaches kids bout the theory of evolution and the pressures of natural selection.'
+    },
+    {
+      'img': '../../assets/gravityMay9.png',
+      'alt': 'Gravity Module',
+      'module_name': 'Gravity',
+      'module_description': 'Space Module teaches students about gravity in space. They will learn about how masses of planets affect gravity.'
+    }
+  ]
+
   return (
     <div className='container-selection'>
       <div>
@@ -19,33 +34,15 @@ function Selection() {
           <div className='font-coco'>Choose Your Adventure!</div>
         </div>
         <div className="container-card">
-          <div className="evolution-card"><GameModule /></div>
-          <div className='game-card'>
-            <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia
-              component="img"
-              height="250"
-              image={require("../../assets/gravityMay9.png")}
-              alt="Space Module"
-              />
-              <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                  Gravity Attack
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                  Space Module teaches students about gravity in space. They will learn about how masses of planets affect gravity. 
-              </Typography>
-              </CardContent>
-            </CardActionArea>
-            </Card>
-          </div>
+          {modules.map((module, index) => {
+            return (<GameModule key={index} data={module} />)
+          })}
           <div className='input-selection'>
             <TextField id="outlined-basic" label="Instructor Name" variant="outlined" />
-            <TextField id="outlined-basic" size="large" label="Number of Students" variant="outlined" />
+            <TextField id="outlined-basic" label="Number of Students" variant="outlined" />
           </div>
           <div className="create-button">
-            <Button variant="contained" size="large">Create Game</Button>
+            <Button variant="contained">Create Game</Button>
           </div> 
         </div>
       </div>
