@@ -43,10 +43,6 @@ function Selection() {
           {modules.map((module, index) => {
             return (<GameModule key={index} data={module} />)
           })}
-          {/* <div className='input-selection'>
-            <TextField id="outlined-basic" label="Instructor Name" variant="outlined" />
-            <TextField id="outlined-basic" label="Number of Students" variant="outlined" />
-          </div> */}
           <div className='input-instructor'>
             <Grid container direction={"row"} spacing={4}>
             <Grid item>
@@ -56,12 +52,10 @@ function Selection() {
             <TextField label="Number of Students" variant="outlined" />
             </Grid>
             <Grid item>
-            <Button 
+            <Button className='button-createGame'
                     style={{
-                      maxWidth: "80px",
-                      maxHeight: "60px",
-                      minWidth: "80px",
-                      minHeight: "50px"
+                      width: "12rem",
+                      height: "3.5rem",
                     }} variant="contained">Create Game</Button>
             </Grid>
             </Grid>
