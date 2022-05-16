@@ -13,7 +13,7 @@ const GameModule = (props) => {
       <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
-        component="img"
+        // component="img"
         height="250"
         image={require(img)}
         alt={alt}

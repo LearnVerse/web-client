@@ -7,6 +7,13 @@ import GameModule from "../GameModule/gameModule";
 import './styles.css';
 import { useState } from "react";
 
+// import evolutionImg from '../../assets/evolutionMay10.png';
+// import gravityImg from '../../assets/gravityMay9.png';
+
+
+import evolutionImg from './evolutionMay10.png';
+import gravityImg from './gravityMay9.png';
+
 function Selection() {
   const [moduleName, setModuleName] = useState('Gravity!');
   const [address, setAddress] = useState('100.100.100.100');
@@ -15,14 +22,16 @@ function Selection() {
   const modules = [
     {
       // 'img': '../../assets/evolutionMay10.png',
-      'img': './evolutionMay10.png',
+      // 'img': './evolutionMay10.png',
+      'img': evolutionImg,
       'alt': 'Evolution Module',
       'module_name': 'Evolution',
       'module_description': 'Evolution Module teaches kids bout the theory of evolution and the pressures of natural selection.'
     },
     {
       // 'img': '../../assets/gravityMay9.png',
-      'img': './gravityMay9.png',
+      // 'img': './gravityMay9.png',
+      'img': gravityImg,
       'alt': 'Gravity Module',
       'module_name': 'Gravity',
       'module_description': 'Space Module teaches students about gravity in space. They will learn about how masses of planets affect gravity.'
