@@ -10,12 +10,12 @@ const GameModule = (props) => {
   console.log(module_name);
   return (
     <div className='game-card-evolution'>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 500 }}>
       <CardActionArea>
         <CardMedia
-        // component="img"
+        component="img"
         height="250"
-        image={require(img)}
+        image={img}
         alt={alt}
         />
         <CardContent>
