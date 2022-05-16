@@ -14,13 +14,15 @@ function Selection() {
 
   const modules = [
     {
-      'img': '../../assets/evolutionMay10.png',
+      // 'img': '../../assets/evolutionMay10.png',
+      'img': './evolutionMay10.png',
       'alt': 'Evolution Module',
       'module_name': 'Evolution',
       'module_description': 'Evolution Module teaches kids bout the theory of evolution and the pressures of natural selection.'
     },
     {
-      'img': '../../assets/gravityMay9.png',
+      // 'img': '../../assets/gravityMay9.png',
+      'img': './gravityMay9.png',
       'alt': 'Gravity Module',
       'module_name': 'Gravity',
       'module_description': 'Space Module teaches students about gravity in space. They will learn about how masses of planets affect gravity.'
