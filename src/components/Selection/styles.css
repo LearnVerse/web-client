@@ -1,0 +1,37 @@
+.game-card-evolution{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80vw;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+.game-card{
+    padding-top: 20vh;
+}
+.container-card {
+    display: flex;
+    flex-direction: row;
+}
+.font-coco{
+    font-family: "CocoFont";
+    padding-bottom: 1vh;
+    padding-top: 2vh;
+    font-size: xx-large;
+}
+.input-selection{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+.input-instructor{
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+.button-createGame{
+    width: "12rem";
+    height: "3.5rem";
+}

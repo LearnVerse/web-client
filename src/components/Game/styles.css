@@ -1,27 +1,16 @@
-.container {
-  display: grid;
-  grid-template-columns: 260px auto;
-  grid-template-rows: 1fr auto;
-  grid-template-areas:
-    "sidebar  canvas"
-    "sidebar  instructions"
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+  margin-top: 1.5rem;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  padding: 30px;
-  z-index: 1;
+.logo > img {
+  height: 70px;
 }
 
-.canvas {
-  grid-area: canvas;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 30px;
-  z-index: 1;
-}
-
-.instructions {
-  grid-area: instructions;
-  z-index: 1;
+.end-button {
+  margin-left: 85vw;
 }
