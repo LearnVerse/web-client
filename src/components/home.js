@@ -10,11 +10,10 @@ import '../styles.scss';
 const Home = (props) => {
   const [name, setName] = useState('');
   const [partyId, setPartyId] = useState('');
-  const game = localStorage.getItem('game');
   const navigate = useNavigate();
 
   const handleSubmission = async () => {
-    await props.getPartyGame(partyId);
+    const game = await props.getPartyGame(partyId);
     props.joinPartyAsStudent(partyId, name, game, navigate);
   };
 

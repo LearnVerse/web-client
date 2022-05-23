@@ -6,8 +6,14 @@ import {
   getPartyGame,
 } from './party-actions';
 
+import {
+  ActionTypes as userActionTypes,
+  getInstructorStatus,
+} from './user-actions';
+
 const ActionTypes = {
   ...partyActionTypes,
+  ...userActionTypes,
 };
 
 export {
@@ -16,4 +22,5 @@ export {
   getAllPartyMembers,
   joinPartyAsStudent,
   getPartyGame,
+  getInstructorStatus,
 };

@@ -3,18 +3,20 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from '@mui/material';
 import { MODULES } from '../constants';
-import { getAllPartyMembers } from '../actions';
+import { getAllPartyMembers, getInstructorStatus } from '../actions';
 import LearnVerseLogo from '../assets/learnverse_logo.png';
 import '../styles.scss';
 
 const Room = (props) => {
   const { game, partyId } = useParams();
-  const { partyMembers } = props;
-  const isInstructor = localStorage.getItem('instructor');
+  const { partyMembers, isInstructor } = props;
   const { fontFamily, fontSize } = MODULES[game];
+  const userId = localStorage.getItem('userId');
+  console.log(props);
 
   useEffect(() => {
     props.getAllPartyMembers(partyId);
+    props.getInstructorStatus(userId);
   });
 
   return (
@@ -45,7 +47,8 @@ const Room = (props) => {
 const mapStateToProps = (reduxState) => {
   return {
     partyMembers: reduxState.partyState.partyMembers,
+    isInstructor: reduxState.userState.isInstructor,
   };
 };
 
-export default connect(mapStateToProps, { getAllPartyMembers })(Room);
+export default connect(mapStateToProps, { getAllPartyMembers, getInstructorStatus })(Room);
