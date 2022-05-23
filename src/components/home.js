@@ -3,17 +3,19 @@ import { useNavigate } from 'react-router';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Button, TextField } from '@mui/material';
-import { joinPartyAsStudent } from '../actions';
+import { joinPartyAsStudent, getPartyGame } from '../actions';
 import LearnVerseBanner from '../assets/learnverse_logo_banner.png';
 import '../styles.scss';
 
 const Home = (props) => {
   const [name, setName] = useState('');
   const [partyId, setPartyId] = useState('');
+  const game = localStorage.getItem('game');
   const navigate = useNavigate();
 
-  const handleSubmission = () => {
-    props.joinPartyAsStudent(partyId, name, navigate);
+  const handleSubmission = async () => {
+    await props.getPartyGame(partyId);
+    props.joinPartyAsStudent(partyId, name, game, navigate);
   };
 
   return (
@@ -29,4 +31,4 @@ const Home = (props) => {
   );
 };
 
-export default connect(null, { joinPartyAsStudent })(Home);
+export default connect(null, { joinPartyAsStudent, getPartyGame })(Home);

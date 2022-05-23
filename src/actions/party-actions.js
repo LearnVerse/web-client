@@ -22,7 +22,7 @@ export const createParty = (name, game, numPlayers, navigate) => {
   };
 };
 
-export const joinPartyAsStudent = (partyId, name, navigate) => {
+export const joinPartyAsStudent = (partyId, name, game, navigate) => {
   return async () => {
     try {
       const response = await axios.post(`${ROOT_URL}/party/${partyId}/joinPartyAsStudent`, { name });
@@ -30,7 +30,7 @@ export const joinPartyAsStudent = (partyId, name, navigate) => {
       localStorage.setItem('userId', response.data.data.userId);
       localStorage.setItem('instructor', false);
       localStorage.setItem('address', response.data.data.address);
-      navigate(`/room/${partyId}`);
+      navigate(`/room/${game}/${partyId}`);
     } catch (error) {
       console.log(error);
     }
@@ -48,13 +48,13 @@ export const getAllPartyMembers = (partyId) => {
   };
 };
 
-// export const getPartyInfo = (partyId) => {
-//   return async (dispatch) => {
-//     try {
-//       const response = await axios.get(`${ROOT_URL}/party/${partyId}`);
-//       dispatch({ type: ActionTypes.GET_PARTY_INFO, payload: response.data.data });
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+export const getPartyGame = (partyId) => {
+  return async () => {
+    try {
+      const response = await axios.get(`${ROOT_URL}/party/${partyId}`);
+      localStorage.setItem('game', response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

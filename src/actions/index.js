@@ -3,7 +3,7 @@ import {
   createParty,
   getAllPartyMembers,
   joinPartyAsStudent,
-  // getPartyInfo,
+  getPartyGame,
 } from './party-actions';
 
 const ActionTypes = {
@@ -15,5 +15,5 @@ export {
   createParty,
   getAllPartyMembers,
   joinPartyAsStudent,
-  // getPartyInfo,
+  getPartyGame,
 };
