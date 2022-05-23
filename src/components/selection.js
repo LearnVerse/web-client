@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
-import { Button, TextField } from '@mui/material';
 import { connect } from 'react-redux';
+import { Button, TextField } from '@mui/material';
 import { MODULES } from '../constants';
 import { createParty } from '../actions';
 import LearnVerseLogo from '../assets/learnverse_logo.png';
@@ -10,10 +10,11 @@ import '../styles.scss';
 
 const Selection = (props) => {
   const [name, setName] = useState('');
+  const [selection, setSelection] = useState('');
   const [numPlayers, setNumPlayers] = useState('');
 
   const handleSubmission = () => {
-    props.createParty(name, 'Evolution', numPlayers);
+    props.createParty(name, selection, numPlayers);
   };
 
   return (
@@ -24,8 +25,7 @@ const Selection = (props) => {
       </div>
       <div className="horizontally-centered">
         {Object.values(MODULES).map((module, index) => {
-          if (index > 0) return <GameModule key={index} data={module} right />;
-          return <GameModule key={index} data={module} />;
+          return <GameModule key={index} data={module} right={index > 0} onClick={(game) => setSelection(game)} />;
         })}
       </div>
       <div className="horizontally-centered">

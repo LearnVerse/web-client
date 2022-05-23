@@ -1,18 +1,19 @@
 import React from 'react';
 import {
-  Card, CardContent, CardMedia, CardActionArea, Typography,
+  Card, CardContent, CardMedia, Typography, ButtonBase,
 } from '@mui/material'; // importing material ui component
 import '../styles.scss';
 
 function GameModule(props) {
   const {
-    picture, alt, name, description,
+    game, picture, alt, name, description,
   } = props.data;
-  const { right } = props;
+  const { right, onClick } = props;
+
   return (
     <div className={right && 'right'}>
-      <Card sx={{ height: 300, width: 300 }}>
-        <CardActionArea>
+      <ButtonBase onClick={() => { onClick(game); }}>
+        <Card sx={{ height: 300, width: 300 }}>
           <CardMedia
             component="img"
             height="180"
@@ -23,8 +24,8 @@ function GameModule(props) {
             <Typography gutterBottom variant="h5" component="div">{name}</Typography>
             <Typography variant="body2" color="text.secondary">{description}</Typography>
           </CardContent>
-        </CardActionArea>
-      </Card>
+        </Card>
+      </ButtonBase>
     </div>
   );
 }

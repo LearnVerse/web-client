@@ -7,7 +7,7 @@ export const ActionTypes = {
   CREATE_PARTY: 'CREATE_PARTY',
 };
 
-export const createParty = (name, game, numPlayers) => {
+export const createParty = (name, game, numPlayers, navigate) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(`${ROOT_URL}/server/createParty`, { name, game, numPlayers });
