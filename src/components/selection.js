@@ -1,26 +1,20 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
-import GameModule from './gameModule';
+import { connect } from 'react-redux';
+import { MODULES } from '../constants';
+import { createParty } from '../actions';
 import LearnVerseLogo from '../assets/learnverse_logo.png';
-import { MODULE_ASSETS } from '../constants';
+import GameModule from './gameModule';
 import '../styles.scss';
 
-function Selection() {
-  const modules = [
-    {
-      img: MODULE_ASSETS.evolution.picture,
-      alt: 'Evolution Module',
-      moduleName: 'Dino Adventure',
-      moduleDescription: 'Evolution Module teaches kids about the pressures of natural selection.',
-    },
-    {
-      img: MODULE_ASSETS.gravity.picture,
-      alt: 'Gravity Module',
-      moduleName: 'Space Attack',
-      moduleDescription: 'Space Module teaches students about how masses of planets affect gravity.',
-    },
-  ];
+const Selection = (props) => {
+  const [name, setName] = useState('');
+  const [numPlayers, setNumPlayers] = useState('');
+
+  const handleSubmission = () => {
+    props.createParty(name, 'Evolution', numPlayers);
+  };
 
   return (
     <div className="selection-container">
@@ -29,18 +23,18 @@ function Selection() {
         <h1>Choose Your Module!</h1>
       </div>
       <div className="horizontally-centered">
-        {modules.map((module, index) => {
+        {Object.values(MODULES).map((module, index) => {
           if (index > 0) return <GameModule key={index} data={module} right />;
           return <GameModule key={index} data={module} />;
         })}
       </div>
       <div className="horizontally-centered">
-        <TextField label="Enter Name" variant="outlined" />
-        <TextField className="right" label="Enter Game Pin" variant="outlined" />
+        <TextField label="Name" variant="outlined" value={name} onChange={(e) => setName(e.target.value)} />
+        <TextField className="right" label="Number of Players" variant="outlined" value={numPlayers} onChange={(e) => setNumPlayers(e.target.value)} />
       </div>
-      <div className="horizontally-centered"><Button variant="contained" size="large">Create Game</Button></div>
+      <div className="horizontally-centered"><Button variant="contained" size="large" onClick={() => handleSubmission()}>Create Game</Button></div>
     </div>
   );
-}
+};
 
-export default Selection;
+export default connect(null, { createParty })(Selection);

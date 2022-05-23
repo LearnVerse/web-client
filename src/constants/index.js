@@ -13,15 +13,21 @@ const ROUTES = {
   GAME: '/game',
 };
 
-const MODULE_ASSETS = {
+const MODULES = {
   evolution: {
+    name: 'Dino Adventure',
+    description: 'Evolution Module teaches kids about the pressures of natural selection.',
     picture: evolutionPicture,
+    alt: 'Evolution Module',
     background: evolutionBackground,
     fontFamily: 'EvolutionFont',
     fontSize: '2rem',
   },
   gravity: {
+    name: 'Space Attack',
+    description: 'Space Module teaches students about how masses of planets affect gravity.',
     picture: gravityPicture,
+    alt: 'Gravity Module',
     background: gravityBackground,
     fontFamily: 'GravityFont',
     fontSize: '1.5rem',
@@ -31,5 +37,5 @@ const MODULE_ASSETS = {
 export {
   ROOT_URL,
   ROUTES,
-  MODULE_ASSETS,
+  MODULES,
 };

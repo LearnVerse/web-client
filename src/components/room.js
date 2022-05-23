@@ -1,20 +1,20 @@
 import React from 'react';
 import { Button } from '@mui/material'; // importing material ui component
 import LearnVerseLogo from '../assets/learnverse_logo.png';
-import { MODULE_ASSETS } from '../constants';
+import { MODULES } from '../constants';
 import '../styles.scss';
 
 function Room() {
-  const module = 'evolution';
+  const module = 'gravity';
   const moduleName = 'Gravity Attack';
   const isInstructor = true;
-  const { fontFamily, fontSize } = MODULE_ASSETS[module];
+  const { fontFamily, fontSize } = MODULES[module];
   const students = ['Jack', 'Susan', 'Rick'];
 
   return (
     <div className="room-container">
       <div><img className="logo" src={LearnVerseLogo} alt="LearnVerse logo" /></div>
-      <div className="horizontally-centered"><img className="module-image" src={MODULE_ASSETS[module].picture} alt="Module" /></div>
+      <div className="horizontally-centered"><img className="module-image" src={MODULES[module].picture} alt="Module" /></div>
       <div className="horizontally-centered">
         <div>
           <div className="text-centered" style={{ fontFamily, fontSize }}>Welcome to {moduleName}!</div>

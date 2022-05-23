@@ -6,10 +6,9 @@ import '../styles.scss';
 
 function GameModule(props) {
   const {
-    img, alt, moduleName, moduleDescription,
+    picture, alt, name, description,
   } = props.data;
   const { right } = props;
-  console.log(right);
   return (
     <div className={right && 'right'}>
       <Card sx={{ height: 300, width: 300 }}>
@@ -17,12 +16,12 @@ function GameModule(props) {
           <CardMedia
             component="img"
             height="180"
-            image={img}
+            image={picture}
             alt={alt}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">{moduleName}</Typography>
-            <Typography variant="body2" color="text.secondary">{moduleDescription}</Typography>
+            <Typography gutterBottom variant="h5" component="div">{name}</Typography>
+            <Typography variant="body2" color="text.secondary">{description}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>
