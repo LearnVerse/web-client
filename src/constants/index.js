@@ -6,13 +6,6 @@ import gravityBackground from '../assets/module_gravity.png';
 
 const ROOT_URL = 'http://localhost:3000/';
 
-const ROUTES = {
-  HOME: '/',
-  SELECTION: '/selection',
-  ROOM: '/room',
-  GAME: '/game',
-};
-
 const MODULES = {
   evolution: {
     game: 'Evolution',
@@ -38,6 +31,5 @@ const MODULES = {
 
 export {
   ROOT_URL,
-  ROUTES,
   MODULES,
 };

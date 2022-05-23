@@ -1,13 +1,15 @@
 import {
-  ActionTypes as serviceActionTypes,
+  ActionTypes as partyActionTypes,
   createParty,
-} from './server-actions';
+  getAllPartyMembers,
+} from './party-actions';
 
 const ActionTypes = {
-  ...serviceActionTypes,
+  ...partyActionTypes,
 };
 
 export {
   ActionTypes,
   createParty,
+  getAllPartyMembers,
 };

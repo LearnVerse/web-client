@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Button } from '@mui/material'; // importing material ui component
-import LearnVerseLogo from '../assets/learnverse_logo.png';
 import { MODULES } from '../constants';
+import { getAllPartyMembers } from '../actions';
+import LearnVerseLogo from '../assets/learnverse_logo.png';
 import '../styles.scss';
 
-function Room() {
+const Room = (props) => {
+  const { partyId } = useParams();
+  const { partyMembers } = props;
   const module = 'gravity';
   const moduleName = 'Gravity Attack';
   const isInstructor = true;
   const { fontFamily, fontSize } = MODULES[module];
-  const students = ['Jack', 'Susan', 'Rick'];
+
+  useEffect(() => {
+    props.getAllPartyMembers(partyId);
+  }, []);
 
   return (
     <div className="room-container">
@@ -22,8 +30,8 @@ function Room() {
         </div>
       </div>
       <div className="horizontally-centered" style={{ fontFamily, fontSize }}>
-        {students.map((student) => {
-          return <div className="name-bubble">{student}</div>;
+        {partyMembers && partyMembers.map((member, index) => {
+          return <div key={index} className="name-bubble">{member.name}</div>;
         })}
       </div>
       {isInstructor
@@ -34,6 +42,12 @@ function Room() {
         )}
     </div>
   );
-}
+};
 
-export default Room;
+const mapStateToProps = (reduxState) => {
+  return {
+    partyMembers: reduxState.partyState.partyMembers,
+  };
+};
+
+export default connect(mapStateToProps, { getAllPartyMembers })(Room);

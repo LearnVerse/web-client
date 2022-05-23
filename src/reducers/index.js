@@ -1,9 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import ServerReducer from './server-reducer';
+import PartyReducer from './party-reducer';
 
 const rootReducer = combineReducers({
-  serverState: ServerReducer,
+  partyState: PartyReducer,
 });
 
 export default rootReducer;

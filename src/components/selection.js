@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { connect } from 'react-redux';
 import { Button, TextField } from '@mui/material';
 import { MODULES } from '../constants';
@@ -12,9 +13,10 @@ const Selection = (props) => {
   const [name, setName] = useState('');
   const [selection, setSelection] = useState('');
   const [numPlayers, setNumPlayers] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmission = () => {
-    props.createParty(name, selection, numPlayers);
+    props.createParty(name, selection, numPlayers, navigate);
   };
 
   return (
