@@ -8,7 +8,7 @@ const ROOT_URL = 'http://localhost:3000/';
 
 const MODULES = {
   evolution: {
-    game: 'Evolution',
+    game: 'evolution',
     name: 'Dino Adventure',
     description: 'Evolution Module teaches kids about the pressures of natural selection.',
     picture: evolutionPicture,
@@ -18,7 +18,7 @@ const MODULES = {
     fontSize: '2rem',
   },
   gravity: {
-    game: 'Gravity',
+    game: 'gravity',
     name: 'Space Attack',
     description: 'Space Module teaches students about how masses of planets affect gravity.',
     picture: gravityPicture,

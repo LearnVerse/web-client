@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/selection" element={<Selection />} />
-        <Route path="/room/:partyId" element={<Room />} />
+        <Route path="/room/:game/:partyId" element={<Room />} />
         <Route path="/game" element={<Game />} />
         <Route path="*" element={fallBack()} />
       </Routes>

@@ -2,6 +2,8 @@ import {
   ActionTypes as partyActionTypes,
   createParty,
   getAllPartyMembers,
+  joinPartyAsStudent,
+  // getPartyInfo,
 } from './party-actions';
 
 const ActionTypes = {
@@ -12,4 +14,6 @@ export {
   ActionTypes,
   createParty,
   getAllPartyMembers,
+  joinPartyAsStudent,
+  // getPartyInfo,
 };

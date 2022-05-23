@@ -4,17 +4,33 @@ const ROOT_URL = 'http://localhost:9090'; // local server
 // const ROOT_URL = 'https://sa7-backend.onrender.com'; // online server
 
 export const ActionTypes = {
-  CREATE_PARTY: 'CREATE_PARTY',
   GET_PARTY_MEMBERS: 'GET_PARTY_MEMBERS',
+  GET_PARTY_INFO: 'GET_PARTY_INFO',
 };
 
 export const createParty = (name, game, numPlayers, navigate) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       const response = await axios.post(`${ROOT_URL}/party/create`, { name, game, numPlayers });
       localStorage.setItem('partyId', response.data.data.partyId);
       localStorage.setItem('userId', response.data.data.userId);
-      navigate(`/room/${response.data.data.partyId}`);
+      localStorage.setItem('instructor', true);
+      navigate(`/room/${game}/${response.data.data.partyId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const joinPartyAsStudent = (partyId, name, navigate) => {
+  return async () => {
+    try {
+      const response = await axios.post(`${ROOT_URL}/party/${partyId}/joinPartyAsStudent`, { name });
+      localStorage.setItem('partyId', partyId);
+      localStorage.setItem('userId', response.data.data.userId);
+      localStorage.setItem('instructor', false);
+      localStorage.setItem('address', response.data.data.address);
+      navigate(`/room/${partyId}`);
     } catch (error) {
       console.log(error);
     }
@@ -31,3 +47,14 @@ export const getAllPartyMembers = (partyId) => {
     }
   };
 };
+
+// export const getPartyInfo = (partyId) => {
+//   return async (dispatch) => {
+//     try {
+//       const response = await axios.get(`${ROOT_URL}/party/${partyId}`);
+//       dispatch({ type: ActionTypes.GET_PARTY_INFO, payload: response.data.data });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// };

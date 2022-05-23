@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Card, CardContent, CardMedia, Typography, ButtonBase,
-} from '@mui/material'; // importing material ui component
+} from '@mui/material';
 import '../styles.scss';
 
 function GameModule(props) {
