@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import UnityCanvas from './unityCanvas';
-import LearnVerseLogo from '../assets/learnverse_logo.png';
-import '../styles.scss';
+import UnityCanvasEvolution from './unityCanvasEvolution';
+import LearnVerseLogo from '../../assets/learnverse_logo.png';
+import '../../styles.scss';
 
-function Game() {
+function GameEvolution() {
   const moduleName = 'Dino Adventure';
   const address = '100.100.100.100';
   const isInstructor = true;
@@ -20,7 +20,7 @@ function Game() {
           <div style={{ fontFamily, fontSize }}>IP Address: {address}</div>
         </div>
       </div>
-      <div className="horizontally-centered"><UnityCanvas /></div>
+      <div className="horizontally-centered"><UnityCanvasEvolution /></div>
       {isInstructor
         && (
           <div className="horizontally-centered">
@@ -31,4 +31,4 @@ function Game() {
   );
 }
 
-export default Game;
+export default GameEvolution;

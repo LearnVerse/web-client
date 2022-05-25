@@ -1,6 +1,6 @@
 import React from 'react';
 import Unity, { UnityContext } from 'react-unity-webgl';
-import '../styles.scss';
+import '../../styles.scss';
 
 const unityContext = new UnityContext({
   loaderUrl: 'build/Client.loader.js',
@@ -9,7 +9,7 @@ const unityContext = new UnityContext({
   codeUrl: 'build/Client.wasm',
 });
 
-function UnityCanvas() {
+function UnityCanvasGravity() {
   return (
     <div className="canvas-wrapper">
       <Unity className="interface" unityContext={unityContext} />
@@ -17,4 +17,4 @@ function UnityCanvas() {
   );
 }
 
-export default UnityCanvas;
+export default UnityCanvasGravity;
