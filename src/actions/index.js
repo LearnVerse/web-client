@@ -4,6 +4,8 @@ import {
   getAllPartyMembers,
   joinPartyAsStudent,
   getPartyGame,
+  getPartyStatus,
+  startGame,
 } from './party-actions';
 
 import {
@@ -23,4 +25,6 @@ export {
   joinPartyAsStudent,
   getPartyGame,
   getInstructorStatus,
+  getPartyStatus,
+  startGame,
 };

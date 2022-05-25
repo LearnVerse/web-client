@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button, TextField } from '@mui/material';
 import { MODULES } from '../constants';
@@ -21,7 +22,7 @@ const Selection = (props) => {
 
   return (
     <div className="selection-container">
-      <div><img className="logo" src={LearnVerseLogo} alt="LearnVerse logo" /></div>
+      <NavLink to="/"><div><img className="logo" src={LearnVerseLogo} alt="LearnVerse logo" /></div></NavLink>
       <div className="horizontally-centered">
         <h1>Choose Your Module!</h1>
       </div>

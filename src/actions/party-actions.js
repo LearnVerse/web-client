@@ -5,6 +5,7 @@ const ROOT_URL = 'http://localhost:9090'; // local server
 
 export const ActionTypes = {
   GET_PARTY_MEMBERS: 'GET_PARTY_MEMBERS',
+  START_GAME: 'START_GAME',
 };
 
 export const createParty = (name, game, numPlayers, navigate) => {
@@ -52,7 +53,30 @@ export const getPartyGame = (partyId) => {
   return async () => {
     try {
       const response = await axios.get(`${ROOT_URL}/party/${partyId}`);
-      return response.data.data;
+      return response.data.data.game;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+};
+
+export const getPartyStatus = (partyId) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(`${ROOT_URL}/party/${partyId}`);
+      if (response) dispatch({ type: ActionTypes.START_GAME });
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+};
+
+export const startGame = (partyId) => {
+  return async (dispatch) => {
+    try {
+      await axios.patch(`${ROOT_URL}/party/${partyId}`, { attribute: 'playing', value: true });
     } catch (error) {
       console.log(error);
       throw error;

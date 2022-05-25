@@ -1,31 +1,45 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router';
+import { NavLink, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from '@mui/material';
 import { MODULES } from '../constants';
-import { getAllPartyMembers, getInstructorStatus } from '../actions';
+import {
+  getAllPartyMembers, getInstructorStatus, getPartyStatus, startGame,
+} from '../actions';
 import LearnVerseLogo from '../assets/learnverse_logo.png';
 import '../styles.scss';
 
 const Room = (props) => {
   const { game, partyId } = useParams();
-  const { partyMembers, isInstructor } = props;
+  const { partyMembers, isInstructor, gameStarted } = props;
   const { fontFamily, fontSize } = MODULES[game];
   const userId = localStorage.getItem('userId');
-  console.log(props);
+  const address = localStorage.getItem('address');
+  const navigate = useNavigate();
 
   useEffect(() => {
     props.getAllPartyMembers(partyId);
     props.getInstructorStatus(userId);
+    props.getPartyStatus(partyId);
   });
+
+  const instructorStartGame = () => {
+    props.startGame(partyId);
+  };
+
+  const studentJoinGame = () => {
+    navigate(`/game/${game}/${partyId}/${address}`);
+  };
 
   return (
     <div className="room-container">
-      <div><img className="logo" src={LearnVerseLogo} alt="LearnVerse logo" /></div>
+      <NavLink to="/"><div><img className="logo" src={LearnVerseLogo} alt="LearnVerse logo" /></div></NavLink>
       <div className="horizontally-centered"><img className="module-image" src={MODULES[game].picture} alt="Module" /></div>
       <div className="horizontally-centered">
         <div>
           <div className="text-centered" style={{ fontFamily, fontSize }}>Welcome to {MODULES[game].name}!</div>
+          <div className="text-centered" style={{ fontFamily, fontSize }}>Your party code is: {partyId}</div>
           <div className="text-centered" style={{ fontFamily, fontSize }}>Waiting for all party members to join...</div>
         </div>
       </div>
@@ -37,7 +51,13 @@ const Room = (props) => {
       {isInstructor
         && (
           <div className="horizontally-centered">
-            <Button variant="contained" size="large">Start Game</Button>
+            <Button variant="contained" size="large" onClick={() => instructorStartGame()}>Start Game</Button>
+          </div>
+        )}
+      {!isInstructor && gameStarted
+        && (
+          <div className="horizontally-centered">
+            <Button variant="contained" size="large" onClick={() => studentJoinGame()}>Join Game</Button>
           </div>
         )}
     </div>
@@ -47,8 +67,11 @@ const Room = (props) => {
 const mapStateToProps = (reduxState) => {
   return {
     partyMembers: reduxState.partyState.partyMembers,
+    gameStarted: reduxState.partyState.gameStarted,
     isInstructor: reduxState.userState.isInstructor,
   };
 };
 
-export default connect(mapStateToProps, { getAllPartyMembers, getInstructorStatus })(Room);
+export default connect(mapStateToProps, {
+  getAllPartyMembers, getInstructorStatus, getPartyStatus, startGame,
+})(Room);

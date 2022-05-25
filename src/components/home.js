@@ -22,9 +22,9 @@ const Home = (props) => {
       <div className="horizontally-centered"><img className="banner" src={LearnVerseBanner} alt="LearnVerse banner" /></div>
       <div className="horizontally-centered">
         <TextField label="Enter Name" variant="outlined" value={name} onChange={(e) => setName(e.target.value)} />
-        <TextField className="right" label="Enter Game Pin" variant="outlined" value={partyId} onChange={(e) => setPartyId(e.target.value)} />
+        <TextField className="right" label="Enter Party Code" variant="outlined" value={partyId} onChange={(e) => setPartyId(e.target.value)} />
       </div>
-      <div className="horizontally-centered"><Button variant="contained" size="large" onClick={() => handleSubmission()}>Join Game</Button></div>
+      <div className="horizontally-centered"><Button variant="contained" size="large" onClick={() => handleSubmission()}>Join Party</Button></div>
       <div className="horizontally-centered"><NavLink to="selection">If you are an instructor, click here to create a new game</NavLink></div>
     </div>
   );
