@@ -65,7 +65,7 @@ export const getPartyStatus = (partyId) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(`${ROOT_URL}/party/${partyId}`);
-      if (response) dispatch({ type: ActionTypes.START_GAME });
+      if (response) dispatch({ type: ActionTypes.START_GAME, payload: response.data.data.playing });
     } catch (error) {
       console.log(error);
       throw error;
@@ -76,7 +76,8 @@ export const getPartyStatus = (partyId) => {
 export const startGame = (partyId) => {
   return async (dispatch) => {
     try {
-      await axios.patch(`${ROOT_URL}/party/${partyId}`, { attribute: 'playing', value: true });
+      const response = await axios.patch(`${ROOT_URL}/party/${partyId}`, { attribute: 'playing', value: true });
+      if (response) dispatch({ type: ActionTypes.START_GAME, payload: true });
     } catch (error) {
       console.log(error);
       throw error;

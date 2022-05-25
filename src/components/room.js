@@ -15,7 +15,7 @@ const Room = (props) => {
   const { partyMembers, isInstructor, gameStarted } = props;
   const { fontFamily, fontSize } = MODULES[game];
   const userId = localStorage.getItem('userId');
-  const address = localStorage.getItem('address');
+  // const address = localStorage.getItem('address');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Room = (props) => {
   };
 
   const studentJoinGame = () => {
-    navigate(`/game/${game}/${partyId}/${address}`);
+    navigate('/game');
   };
 
   return (

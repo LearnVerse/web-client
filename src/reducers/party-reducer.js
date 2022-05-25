@@ -11,7 +11,7 @@ const PartyReducer = (state = initialState, action = {}) => {
     case ActionTypes.GET_PARTY_MEMBERS:
       return { ...state, partyMembers: action.payload };
     case ActionTypes.START_GAME:
-      return { ...state, gameStarted: true };
+      return { ...state, gameStarted: action.payload };
     default:
       return state;
   }

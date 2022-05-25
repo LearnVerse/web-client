@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/selection" element={<Selection />} />
         <Route path="/room/:game/:partyId" element={<Room />} />
-        <Route path="/game/:game/:partyId/:address" element={<Game />} />
+        <Route path="/game" element={<Game />} />
         <Route path="*" element={fallBack()} />
       </Routes>
     </BrowserRouter>
