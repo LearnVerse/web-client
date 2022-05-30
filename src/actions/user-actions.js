@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-const ROOT_URL = 'http://localhost:9090'; // local server
-// const ROOT_URL = 'https://sa7-backend.onrender.com'; // online server
+import { ROOT_URL } from '../constants';
 
 export const ActionTypes = {
   GET_INSTRUCTOR_STATUS: 'GET_INSTRUCTOR_STATUS',

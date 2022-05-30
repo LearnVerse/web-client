@@ -4,7 +4,8 @@ import evolutionBackground from '../assets/module_evolution_background.png';
 import gravityPicture from '../assets/module_gravity.png';
 import gravityBackground from '../assets/module_gravity.png';
 
-const ROOT_URL = 'http://localhost:3000/';
+const ROOT_URL = 'http://localhost:9090'; // local server
+// const ROOT_URL = 'https://sa7-backend.onrender.com'; // online server
 
 const MODULES = {
   evolution: {
