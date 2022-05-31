@@ -4,7 +4,7 @@ import Home from './components/home';
 import Selection from './components/selection';
 import Room from './components/room';
 import GameEvolution from './components/game/gameEvolution';
-import GameGravity from './components/Game/gameGravity';
+import GameGravity from './components/game/gameGravity';
 
 function fallBack() {
   return <div>URL not found</div>;
