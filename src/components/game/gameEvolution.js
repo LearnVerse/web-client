@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@mui/material';
-import { Player } from 'video-react';
 import { MODULES } from '../../constants';
-import { getPartyStatus, playVideo } from '../../actions';
+import { getPartyStatus, playVideo, stopVideo } from '../../actions';
 import UnityCanvasEvolution from './unityCanvasEvolution';
 import LearnVerseLogo from '../../assets/learnverse_logo.png';
+import MyVideo from '../../assets/myvideo.mp4';
 import '../../styles.scss';
 
 const GameEvolution = (props) => {
@@ -17,15 +18,19 @@ const GameEvolution = (props) => {
 
   useEffect(() => {
     props.getPartyStatus(partyId);
+    console.log(showVideo);
   });
 
   const instructorShowVideo = () => {
     props.playVideo(partyId);
   };
 
+  const instructorStopVideo = () => {
+    props.stopVideo(partyId);
+  };
+
   return (
     <div>
-      {console.log(showVideo)}
       {!showVideo
         ? (
           <div className="game-container">
@@ -37,19 +42,22 @@ const GameEvolution = (props) => {
               </div>
             </div>
             <div className="horizontally-centered"><UnityCanvasEvolution /></div>
+            <div className="horizontally-centered"><Button variant="contained" size="large" onClick={() => instructorShowVideo()}>Show Video</Button></div>
             {isInstructor
             && (
-              <div className="horizontally-centered">
-                <Button variant="contained" size="large" onClick={() => instructorShowVideo()}>Show Video</Button>
-                <Button variant="contained" size="large">End Game</Button>
-              </div>
+              <div className="horizontally-centered"><Button variant="contained" size="large" className="right">End Game</Button></div>
             )}
           </div>
         )
         : (
-          <Player>
-            <source src="https://www.youtube.com/watch?v=jQxnlWc0VsM&ab_channel=LeoLeo" />
-          </Player>
+          <div>
+            <video loop autoPlay src={MyVideo} style={{ height: '80vh' }} />
+            <div className="horizontally-centered"><Button variant="contained" size="large" onClick={() => instructorStopVideo()}>Stop Video</Button></div>
+            {isInstructor
+            && (
+              <div className="horizontally-centered"><Button variant="contained" size="large" className="right">End Game</Button></div>
+            )}
+          </div>
         )}
     </div>
   );
@@ -62,4 +70,4 @@ const mapStateToProps = (reduxState) => {
   };
 };
 
-export default connect(mapStateToProps, { getPartyStatus, playVideo })(GameEvolution);
+export default connect(mapStateToProps, { getPartyStatus, playVideo, stopVideo })(GameEvolution);

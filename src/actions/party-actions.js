@@ -98,3 +98,15 @@ export const playVideo = (partyId) => {
     }
   };
 };
+
+export const stopVideo = (partyId) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.patch(`${ROOT_URL}/party/${partyId}`, { attribute: 'playVideo', value: false });
+      if (response) dispatch({ type: ActionTypes.PLAY_VIDEO, payload: false });
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+};

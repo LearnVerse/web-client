@@ -7,6 +7,7 @@ import {
   getPartyStatus,
   startGame,
   playVideo,
+  stopVideo,
 } from './party-actions';
 
 import {
@@ -29,4 +30,5 @@ export {
   getPartyStatus,
   startGame,
   playVideo,
+  stopVideo,
 };
