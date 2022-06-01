@@ -4,6 +4,7 @@ import { ROOT_URL } from '../constants';
 export const ActionTypes = {
   GET_PARTY_MEMBERS: 'GET_PARTY_MEMBERS',
   START_GAME: 'START_GAME',
+  PLAY_VIDEO: 'PLAY_VIDEO',
 };
 
 export const createParty = (name, game, numPlayers, navigate) => {
@@ -63,7 +64,10 @@ export const getPartyStatus = (partyId) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(`${ROOT_URL}/party/${partyId}`);
-      if (response) dispatch({ type: ActionTypes.START_GAME, payload: response.data.data.playing });
+      if (response) {
+        dispatch({ type: ActionTypes.START_GAME, payload: response.data.data.playing });
+        dispatch({ type: ActionTypes.PLAY_VIDEO, payload: response.data.data.playVideo });
+      }
     } catch (error) {
       console.log(error);
       throw error;
@@ -76,6 +80,18 @@ export const startGame = (partyId) => {
     try {
       const response = await axios.patch(`${ROOT_URL}/party/${partyId}`, { attribute: 'playing', value: true });
       if (response) dispatch({ type: ActionTypes.START_GAME, payload: true });
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  };
+};
+
+export const playVideo = (partyId) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.patch(`${ROOT_URL}/party/${partyId}`, { attribute: 'playVideo', value: true });
+      if (response) dispatch({ type: ActionTypes.PLAY_VIDEO, payload: true });
     } catch (error) {
       console.log(error);
       throw error;

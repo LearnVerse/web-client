@@ -55,11 +55,12 @@
     "axios": "^0.26.1",
     "jquery": "^3.6.0",
     "lodash.debounce": "^4.0.8",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
-    "react-unity-webgl": "^8.8.0"
+    "react-unity-webgl": "^8.8.0",
+    "video-react": "^0.15.0"
   }
 }

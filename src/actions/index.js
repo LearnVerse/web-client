@@ -6,6 +6,7 @@ import {
   getPartyGame,
   getPartyStatus,
   startGame,
+  playVideo,
 } from './party-actions';
 
 import {
@@ -27,4 +28,5 @@ export {
   getInstructorStatus,
   getPartyStatus,
   startGame,
+  playVideo,
 };
